@@ -11,10 +11,7 @@ fi
 #  exit 1
 #fi
 
-#These are being called in a different file securesync.variables
-#SOURCE=/var/backups/*.enc#
-#DEST=1234@usw-s123.rsync.net:#
-#TAR=#path to directory to be backed up#
+#This script will need to be run as sudo or root to use the /var/backups system directory. 
  
 #Change working directory to /var/backups
 cd /var/backups
@@ -23,6 +20,7 @@ cd /var/backups
 tar -zcvf ##.tar $TAR
  
 #Encrypt the tarball#
+
 #will be changed to symetric keyfile and then asymentric keyfile#
 openssl enc -aes-256-cbc -salt -in ##.tar -out ##.enc -pass pass:##
  
